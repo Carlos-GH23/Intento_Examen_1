@@ -6,7 +6,7 @@ pipeline {
         stage('Parando los Servicios') {
             steps {
                 bat '''
-                docker compose -p intento-examen-1 down || exit /b 0
+                docker compose -p IntentoExamen1 down || exit /b 0
             '''
             }
         }
@@ -15,7 +15,7 @@ pipeline {
         stage('Eliminando Imagenes'){
             steps{
                 bat '''
-                for /f "tokens=*" %%i in ('docker images --filter "label=com.docker.compose.project=intento-examen-1" -q') do (
+                for /f "tokens=*" %%i in ('docker images --filter "label=com.docker.compose.project=IntentoExamen1" -q') do (
                         docker rmi -f %%i
                     )
                     if errorlevel 1 (

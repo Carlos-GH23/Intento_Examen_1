@@ -4,7 +4,7 @@ services:
     image: client:1.0-ie1
     build:
       context: ./client
-    container_name: intento-examen-1
+    container_name: intento-examen-1-frontend
     ports:
       - "3080:80"
     networks:
